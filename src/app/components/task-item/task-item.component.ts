@@ -10,15 +10,18 @@ import { Task } from '../../../../database/tasks';
 export class TaskItemComponent implements OnInit {
   @Input() task!: Task;
   @Output() onDeleteTask: EventEmitter<Task> = new EventEmitter();
+  @Output() onToggleReminderTask: EventEmitter<Task> = new EventEmitter();
   faTrash = faTrash;
 
   constructor() {}
 
   ngOnInit(): void {}
 
+  onToggleReminder(task: Task) {
+    this.onToggleReminderTask.emit(task);
+  }
+
   onDelete(task: Task) {
-    console.log('123');
-    console.log(task);
     this.onDeleteTask.emit(task);
   }
 }
