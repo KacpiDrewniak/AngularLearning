@@ -1,8 +1,9 @@
-<header class="header">
-  <h1>{{ title }}</h1>
-  <app-button
-    color="green"
-    text="Add"
-    (btnClick)="toggleAddTask()"
-  ></app-button>
-</header>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>{{title}}</span>
+    <span class="spacer"></span>
+    <button (click)="toggleAddTask()" mat-raised-button color="accent">
+      Add task
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>

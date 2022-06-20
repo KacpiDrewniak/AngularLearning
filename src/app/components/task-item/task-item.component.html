@@ -1,7 +1,8 @@
-<div [ngClass]="{reminder: task.reminder }" (click)="onToggleReminder(task)" class="task">
-  <h3>
-    {{ task.text }}
-    <fa-icon (click)="onDelete(task)" [ngStyle]="{ color: 'red' }" [icon]="faTrash"></fa-icon>
-  </h3>
-  <p>{{ task.day }}</p>
-</div>
+<mat-card [ngClass]="{reminder: task.reminder }" (click)="onToggleReminder(task)" class="task-item">
+  <mat-card-title>{{ task.text }}</mat-card-title>
+  <mat-card-subtitle>{{task.day}}</mat-card-subtitle>
+  <mat-card-actions align="end">
+    <button (click)="onDelete(task)" [ngStyle]="{ color: 'red' }" mat-button>Delete</button>
+  </mat-card-actions>
+</mat-card>
+

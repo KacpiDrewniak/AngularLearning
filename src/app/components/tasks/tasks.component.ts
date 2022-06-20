@@ -12,9 +12,7 @@ export class TasksComponent implements OnInit {
 
   constructor(private taskService: TaskService) {}
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   toggleReminder(task: Task) {
     task.reminder = !task.reminder;

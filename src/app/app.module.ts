@@ -11,6 +11,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
 import { AddTaskComponent } from './components/add-task/add-task.component';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from "@angular/material/button";
+import { MatCardModule } from "@angular/material/card";
 
 const declarations = [
   AppComponent,
@@ -27,6 +33,10 @@ const imports = [
   FontAwesomeModule,
   HttpClientModule,
   FormsModule,
+  BrowserAnimationsModule,
+  MatSliderModule,
+  MatToolbarModule,
+  MatIconModule,
 ];
 
 const providers: Provider[] = [];
@@ -35,7 +45,11 @@ const bootstrap = [AppComponent];
 
 @NgModule({
   declarations,
-  imports,
+  imports: [
+    imports,
+    MatButtonModule,
+    MatCardModule
+  ],
   providers,
   bootstrap,
 })
