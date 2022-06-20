@@ -37,6 +37,8 @@ const imports = [
   MatSliderModule,
   MatToolbarModule,
   MatIconModule,
+  MatButtonModule,
+  MatCardModule
 ];
 
 const providers: Provider[] = [];
@@ -45,11 +47,7 @@ const bootstrap = [AppComponent];
 
 @NgModule({
   declarations,
-  imports: [
-    imports,
-    MatButtonModule,
-    MatCardModule
-  ],
+  imports,
   providers,
   bootstrap,
 })

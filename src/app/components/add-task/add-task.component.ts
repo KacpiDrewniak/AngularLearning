@@ -5,10 +5,8 @@ import {Task} from "../../../../database/tasks";
   templateUrl: './add-task.component.html',
   styleUrls: ['./add-task.component.scss'],
 })
-
 export class AddTaskComponent implements OnInit {
-
-  @Output() onAddTask:EventEmitter<Task> = new EventEmitter<Task>()
+  @Output() onAddTask: EventEmitter<Task> = new EventEmitter<Task>();
 
   text?: string;
   day?: string;
@@ -33,7 +31,7 @@ export class AddTaskComponent implements OnInit {
       reminder: this.reminder,
     };
 
-    this.onAddTask.emit(newTask)
+    this.onAddTask.emit(newTask);
 
     this.text = '';
     this.day = '';
