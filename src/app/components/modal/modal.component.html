@@ -1,0 +1,14 @@
+<div class="modal-container">
+  <mat-form-field appearance="fill">
+    <mat-label>Task title</mat-label>
+    <input [(ngModel)]="text" matInput />
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label >Day</mat-label>
+    <input matInput [(ngModel)]="day"/>
+  </mat-form-field>
+  <mat-checkbox  [(ngModel)]="reminder" class="example-margin">Remind</mat-checkbox>
+  <button (click)="toggleAddTask()" mat-raised-button color="accent">
+    Add task
+  </button>
+</div>

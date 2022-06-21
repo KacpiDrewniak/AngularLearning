@@ -17,8 +17,15 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
+import { MatDialogModule } from "@angular/material/dialog";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
+import { ModalComponent } from './components/modal/modal.component';
+import { MatDatepickerModule } from "@angular/material/datepicker";
+import { MatCheckboxModule } from "@angular/material/checkbox";
 
 const declarations = [
+  ModalComponent,
   AppComponent,
   HeaderComponent,
   ButtonComponent,
@@ -28,6 +35,7 @@ const declarations = [
 ];
 
 const imports = [
+  MatCheckboxModule,
   BrowserModule,
   AppRoutingModule,
   FontAwesomeModule,
@@ -38,7 +46,11 @@ const imports = [
   MatToolbarModule,
   MatIconModule,
   MatButtonModule,
-  MatCardModule
+  MatCardModule,
+  MatDialogModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatDatepickerModule
 ];
 
 const providers: Provider[] = [];
@@ -50,5 +62,6 @@ const bootstrap = [AppComponent];
   imports,
   providers,
   bootstrap,
+
 })
 export class AppModule {}

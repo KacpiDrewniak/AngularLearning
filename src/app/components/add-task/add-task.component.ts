@@ -1,5 +1,5 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {Task} from "../../../../database/tasks";
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Task } from '../../../../database/tasks';
 @Component({
   selector: 'app-add-task',
   templateUrl: './add-task.component.html',
@@ -25,6 +25,7 @@ export class AddTaskComponent implements OnInit {
       alert('Please add a day');
       return;
     }
+
     const newTask = {
       text: this.text,
       day: this.day,

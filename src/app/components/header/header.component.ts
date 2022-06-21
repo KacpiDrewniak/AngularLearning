@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalService } from '../../services/modal.service';
 
 @Component({
   selector: 'app-header',
@@ -8,11 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   title: string = 'Task Tracker';
 
-  constructor() {}
+  constructor(private modalService: ModalService) {}
 
   ngOnInit(): void {}
 
-  toggleAddTask(){
-    console.log('toggleAddTask')
+  toggleAddTask() {
+    this.modalService.openInfoModal();
   }
 }

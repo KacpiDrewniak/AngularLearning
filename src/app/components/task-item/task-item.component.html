@@ -10,9 +10,10 @@
       >delete
     </mat-icon>
     <mat-icon
+      (click)="onToggleReminder(task)"
       [ngStyle]="{ color: task.reminder ? '#b3b31a' : 'grey' }"
       class="task-item-icon task-item-icon-ring"
-      caria-hidden="false"
+      aria-hidden="false"
       >notifications_active
     </mat-icon>
   </mat-card-actions>
