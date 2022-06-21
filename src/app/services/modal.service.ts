@@ -16,6 +16,7 @@ export class ModalService {
 
   closeInfoModal(){
     this.dialog.closeAll()
+
   }
 
   openWarningModal() {}

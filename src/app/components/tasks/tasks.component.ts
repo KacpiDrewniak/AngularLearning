@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { tasks as TASKS, Task } from '../../../../database/tasks';
+import { TasksService } from '../../services/tasks.service';
 
 @Component({
   selector: 'app-tasks',
@@ -9,19 +10,24 @@ import { tasks as TASKS, Task } from '../../../../database/tasks';
 export class TasksComponent implements OnInit {
   tasks: Task[] = TASKS;
 
-  constructor() {}
+  constructor(private tasksService: TasksService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.tasks = this.tasksService.getTasks();
+  }
 
   toggleReminder(task: Task) {
-    task.reminder = !task.reminder;
+    this.tasksService.toggleReminder(task);
+    this.tasks = this.tasksService.getTasks();
   }
 
   deleteTask(task: Task) {
-    this.tasks = this.tasks.filter((t) => t.id !== task.id);
+    this.tasksService.deleteTask(task);
+    this.tasks = this.tasksService.getTasks();
   }
 
   addTask(task: Task) {
-    this.tasks.push(task);
+    this.tasksService.addTask(task);
+    this.tasks = this.tasksService.getTasks();
   }
 }
